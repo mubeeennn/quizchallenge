@@ -38,7 +38,9 @@ const Question = ({
     setSelectedOpt('');
     let newAnswers = shuffleArray([correctans, ...incorrectans]);
     setAnswers(newAnswers);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isShow]);
+  
 
   if (isShow) {
     return (
@@ -57,9 +59,10 @@ const Question = ({
         <div style={{marginTop:"40px"}}>
           <p style={{fontSize:"20px", fontWeight:"500"}}>{question}</p>
           <div className='btn-container' style={{marginTop:"40px"}}>
-            {answers.map((a) => {
+            {answers.map((a,index) => {
               return (
                 <button
+                    key={index}
                   className='btn'
                   onClick={() => handleOptionClick(a)}
                   style={buttonStyles(selectedOpt !== '' && a === correctans)}

@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import './App.css';
 import questions from './questions.json';
 import Question from './Question';
@@ -21,6 +20,7 @@ function App() {
         <Topprogressbar count={count}/>
         {questions.map((q, index) => (
           <Question
+            key={index}
             count={index + 1}
             category={decodeURIComponent(q.category)}
             question={decodeURIComponent(q.question)}

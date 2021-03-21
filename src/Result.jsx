@@ -18,7 +18,9 @@ const Result = ({ count, correctAnswers, totalQuestions }) => {
       let maximum = ((correctAnswers + (totalQuestions - count)) / totalQuestions) * 100;
       let current = (correctAnswers / count) * 100;
       setCalc({ minimum, maximum: Math.round(maximum), current: Math.round(current) });
+      
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
   return (

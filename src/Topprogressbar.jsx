@@ -20,6 +20,7 @@ const Topprogressbar = ({count}) => {
           console.log(topwidth)
           
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [count]);
     return (
         <div  style={{
